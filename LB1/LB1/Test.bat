@@ -17,12 +17,14 @@ echo test 4
 if ERRORLEVEL 1 goto err
 
 echo test 5
-%PROGRAM% test-data\example.txt "dog" > "%TEMP%\result.txt" 
+%PROGRAM% test-data\example.txt "dog" > "%TEMP%\result.txt"
+if ERRORLEVEL 1 goto err
 fc.exe "%TEMP%\result.txt" test-data\resultText5.txt > nul
 if ERRORLEVEL 1 goto err
 
 echo test 6
-%PROGRAM% test-data\example.txt "Dog" > "%TEMP%\result.txt" 
+%PROGRAM% test-data\example.txt "Dog" > "%TEMP%\result.txt"
+if NOT ERRORLEVEL 1 goto err
 fc.exe "%TEMP%\result.txt" test-data\resultText6.txt > nul
 if ERRORLEVEL 1 goto err
 
