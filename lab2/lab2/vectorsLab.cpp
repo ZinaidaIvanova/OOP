@@ -15,16 +15,17 @@ double GetMinElem(const std::vector<double>& numArr)
 }
 
 
-std::vector<double> ChangeVector(std::vector<double> &inputVector)
+std::vector<double> ChangeVector( std::vector<double> &inputVector)
 {
+	std::vector<double> resultVector;
 	if (inputVector.begin() != inputVector.end())
 	{
 		double minEl = GetMinElem(inputVector);
-		for (auto vecElem:inputVector)
+		for (double vecElem:inputVector)
 		{
 			vecElem *= minEl;
-			std::cout << vecElem << "  ";
+			resultVector.push_back(vecElem);
 		}
 	}
-	return inputVector;
+	return resultVector;
 }
