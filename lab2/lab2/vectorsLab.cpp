@@ -15,7 +15,7 @@ double GetMinElem(const std::vector<double>& numArr)
 }
 
 
-std::vector<double> ChangeVector( std::vector<double> &inputVector)
+std::vector<double> ChangeVector(std::vector<double> &inputVector)
 {
 	std::vector<double> resultVector;
 	if (inputVector.begin() != inputVector.end())
