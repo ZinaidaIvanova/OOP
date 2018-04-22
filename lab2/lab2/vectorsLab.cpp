@@ -19,5 +19,4 @@ std::vector<double> GetVector()
 			vecElem *= minEl;
 		}
 	}
-
 }
