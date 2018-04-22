@@ -5,4 +5,4 @@ std::vector<double> GetVector();
 
 double GetMinElem(const std::vector<double>& numArr);
 
-std::vector<double> ChangeVector(std::vector<double> &inputVector);
+void ChangeVector(std::vector<double> &inputVector);

@@ -9,10 +9,9 @@ std::vector<double> GetVector()
 }
 
 
-std::vector<double> ChangeVector(std::vector<double> &inputVector)
+ void ChangeVector(std::vector<double> &inputVector)
 {
-	
-	if (inputVector.begin() != inputVector.end())
+	if (!inputVector.empty())
 	{
 		auto minEl = *(std::min_element(inputVector.begin(), inputVector.end()));
 		for (double &vecElem: inputVector)
@@ -20,5 +19,5 @@ std::vector<double> ChangeVector(std::vector<double> &inputVector)
 			vecElem *= minEl;
 		}
 	}
-	return inputVector;
+
 }
