@@ -8,24 +8,17 @@ std::vector<double> GetVector()
 	return inputNum;
 }
 
-double GetMinElem(const std::vector<double>& numArr)
-{
-	auto result = std::min_element(numArr.begin(), numArr.end());
-	return *result;
-}
-
 
 std::vector<double> ChangeVector(std::vector<double> &inputVector)
 {
-	std::vector<double> resultVector;
+	
 	if (inputVector.begin() != inputVector.end())
 	{
-		double minEl = GetMinElem(inputVector);
-		for (double vecElem:inputVector)
+		auto minEl = *(std::min_element(inputVector.begin(), inputVector.end()));
+		for (double &vecElem: inputVector)
 		{
 			vecElem *= minEl;
-			resultVector.push_back(vecElem);
 		}
 	}
-	return resultVector;
+	return inputVector;
 }
