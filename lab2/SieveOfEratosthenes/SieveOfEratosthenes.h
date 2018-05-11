@@ -2,4 +2,10 @@
 
 #include <set>
 
-std::set<int> GeneratePrimeNumbersSet(int upperBound);
+bool AreInvalidArgument(int argc, char * argv[], int &upperBound);
+
+std::vector<bool> ArePrimeNumber(const int &upperBound);
+
+std::set<int> GeneratePrimeNumbersSet(const int &upperBound);
+
+void PrintPrimeNumbersSet(const std::set<int> &PrimeNumbersSet);
