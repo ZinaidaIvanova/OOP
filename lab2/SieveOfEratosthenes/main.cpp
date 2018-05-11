@@ -6,7 +6,7 @@
 int main(int argc, char * argv[])
 {
 	int upperBound = 0;
-	if (!AreInvalidArgument(argc, argv, upperBound))
+	if (IsNotInvalidArgument(argc, argv, upperBound))
 	{
 		PrintPrimeNumbersSet(GeneratePrimeNumbersSet(upperBound));
 	}

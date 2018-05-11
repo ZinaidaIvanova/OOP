@@ -2,7 +2,7 @@
 
 #include <set>
 
-bool AreInvalidArgument(int argc, char * argv[], int upperBound);
+bool IsNotInvalidArgument(int argc, char * argv[], int upperBound);
 
 std::vector<bool> PrimeNumbersSelection(const int upperBound);
 
