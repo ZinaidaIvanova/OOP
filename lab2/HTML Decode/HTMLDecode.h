@@ -11,5 +11,7 @@ struct Code
 	std::string HtmlEntity;
 };
 
-std::string HtmlDecode(std::string const& html);
 
+std::string Replace(const std::string& inputString, Code &encodedCharListElement);
+
+std::string HtmlDecode(std::string const& html);
