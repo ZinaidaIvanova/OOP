@@ -4,9 +4,9 @@ class CTVSet
 public:
 	void TurnOn();
 	void TurnOff();
-	bool IsTurnedOn();
+	bool IsTurnedOn() const;
 	void SelectChannel(int newChannelNum); 
-	int getChannel();
+	int GetChannel() const;
 	void SelectPreviousChannel();
 
 private:

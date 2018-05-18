@@ -2,12 +2,12 @@
 #include "TVSet.h"
 
 
-bool CTVSet::IsTurnedOn()
+bool CTVSet::IsTurnedOn() const
 {
 	return m_isOn;
 }
 
-int CTVSet::getChannel()
+int CTVSet::GetChannel() const
 {
 	return m_channelNum;
 }
@@ -42,5 +42,8 @@ void CTVSet::SelectChannel(int newChannelNum)
 
 void CTVSet::SelectPreviousChannel()
 {
-	std::swap(m_channelNum, m_prevChannelNum);
+	if (m_isOn)
+	{
+		std::swap(m_channelNum, m_prevChannelNum);
+	}
 }
