@@ -7,14 +7,14 @@ bool CTVSet::IsTurnedOn()
 	return m_isOn;
 }
 
-void CTVSet::SelectChannel(int newChannelNum)
-{
-
-}
-
 int CTVSet::getChannel()
 {
 	return m_channelNum;
+}
+
+void CTVSet::rememberCurrChannel()
+{
+	m_prevChannelNum = m_channelNum;
 }
 
 void CTVSet::TurnOn()
@@ -22,10 +22,7 @@ void CTVSet::TurnOn()
 	if (!m_isOn)
 	{
 		m_isOn = true;
-	}
-	if (m_channelNum == 0)
-	{
-		m_channelNum = 1;
+		m_channelNum = m_prevChannelNum;
 	}
 }
 
@@ -34,5 +31,16 @@ void CTVSet::TurnOff()
 	if (m_isOn)
 	{
 		m_isOn = false;
+		rememberCurrChannel();
+		m_channelNum = 0;
+	}
+}
+
+void CTVSet::SelectChannel(int newChannelNum)
+{
+	if ((newChannelNum <= 99) && (newChannelNum >= 1))
+	{
+		rememberCurrChannel();
+		m_channelNum = newChannelNum;
 	}
 }

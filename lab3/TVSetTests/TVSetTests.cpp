@@ -34,10 +34,10 @@ TEST_CASE("Changing TVSet channel")
 	{
 		CHECK(tv.getChannel() == 0);
 	}
-	SECTION("First turningh on TVSet channel is 1")
+	SECTION("First turning on TVSet channel is 1")
 	{
 		tv.TurnOn();
-		CHECK(tv.getChannel() == 0);
+		CHECK(tv.getChannel() == 1);
 	}
 
 	SECTION("TVSet channel selection")
@@ -59,4 +59,15 @@ TEST_CASE("Changing TVSet channel")
 		CHECK(tv.getChannel() == 50);
 
 	}
+	
+	SECTION("TVSet channel doesn't change after turning off and next turning on")
+	{
+		tv.TurnOn();
+		tv.SelectChannel(50);
+		tv.TurnOff();
+		CHECK(tv.getChannel() == 0);
+		tv.TurnOn();
+		CHECK(tv.getChannel() == 50);
+	}
+
 }
