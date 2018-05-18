@@ -5,9 +5,10 @@ public:
 	void TurnOn();
 	void TurnOff();
 	bool IsTurnedOn();
+	void rememberCurrChannel();
 	void SelectChannel(int newChannelNum); 
 	int getChannel();
-	void rememberCurrChannel();
+	void SelectPreviousChannel();
 
 private:
 	bool m_isOn = false;

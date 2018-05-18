@@ -38,9 +38,14 @@ void CTVSet::TurnOff()
 
 void CTVSet::SelectChannel(int newChannelNum)
 {
-	if ((newChannelNum <= 99) && (newChannelNum >= 1))
+	if ((m_isOn) &&(newChannelNum <= 99) && (newChannelNum >= 1))
 	{
 		rememberCurrChannel();
 		m_channelNum = newChannelNum;
 	}
+}
+
+void CTVSet::SelectPreviousChannel()
+{
+
 }

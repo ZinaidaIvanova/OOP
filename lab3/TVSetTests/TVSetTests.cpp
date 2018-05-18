@@ -58,6 +58,9 @@ TEST_CASE("Changing TVSet channel")
 		tv.SelectChannel(100);
 		CHECK(tv.getChannel() == 50);
 
+		tv.TurnOff();
+		tv.SelectChannel(2);
+		CHECK(tv.getChannel() == 0);
 	}
 	
 	SECTION("TVSet channel doesn't change after turning off and next turning on")
@@ -70,4 +73,18 @@ TEST_CASE("Changing TVSet channel")
 		CHECK(tv.getChannel() == 50);
 	}
 
+	SECTION("Previous TVSet channel selection")
+	{
+		tv.TurnOn();
+		tv.SelectChannel(50);
+		tv.SelectChannel(25);
+		tv.SelectPreviousChannel();
+		CHECK(tv.getChannel() == 50);
+
+		tv.TurnOff();
+		tv.TurnOn();
+		tv.SelectPreviousChannel();
+		CHECK(tv.getChannel() == 25);
+	}
 }
+
