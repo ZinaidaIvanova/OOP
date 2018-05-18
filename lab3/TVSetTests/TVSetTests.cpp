@@ -17,4 +17,46 @@ TEST_CASE("Turning the TVSet on and off")
 		tv.TurnOn();
 		CHECK(tv.IsTurnedOn() == true);
 	}
+	SECTION("Turning on TVSet state is changed after turning off, second turning off doesn't change TVSet state")
+	{
+		tv.TurnOn();
+		tv.TurnOff();
+		CHECK(tv.IsTurnedOn() == false);
+		tv.TurnOff();
+		CHECK(tv.IsTurnedOn() == false);
+	}
+}
+
+TEST_CASE("Changing TVSet channel")
+{
+	CTVSet tv;
+	SECTION("Turningh off TVSet channel is 0")
+	{
+		CHECK(tv.getChannel() == 0);
+	}
+	SECTION("First turningh on TVSet channel is 1")
+	{
+		tv.TurnOn();
+		CHECK(tv.getChannel() == 0);
+	}
+
+	SECTION("TVSet channel selection")
+	{
+		tv.TurnOn();
+		tv.SelectChannel(1);
+		CHECK(tv.getChannel() == 1);
+
+		tv.SelectChannel(0);
+		CHECK(tv.getChannel() == 1);
+
+		tv.SelectChannel(99);
+		CHECK(tv.getChannel() == 99);
+
+		tv.SelectChannel(50);
+		CHECK(tv.getChannel() == 50);
+
+		tv.SelectChannel(100);
+		CHECK(tv.getChannel() == 50);
+
+	}
 }
