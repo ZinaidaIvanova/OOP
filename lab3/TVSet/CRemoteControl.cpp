@@ -50,15 +50,14 @@ bool CRemoteControl::TurnOff(std::istream & args)
 
 bool CRemoteControl::SelectChannel(std::istream & args)
 {
-	std::string numString;
-	std::getline(args, numString);
-	int num = std::stoi(numString);
+	int num = 0;
+	args >> num;
 	if (!m_tv.IsTurnedOn()) {
-		m_output << "TV is turned off\n";
+		m_output << "Channel isn't changed\nTV is turned off\n";
 		return true;
 	}
 	if (!m_tv.SelectChannel(num)) {
-		m_output << "Channel number must be range from 1 to 99\n";
+		m_output << "Channel isn't changed\nChannel number must be range from 1 to 99\n";
 		return true;
 	}
 	m_output << "Channel is changed to " << m_tv.GetChannel() << "\n";
@@ -68,7 +67,7 @@ bool CRemoteControl::SelectChannel(std::istream & args)
 bool CRemoteControl::SelectPrevChannel(std::istream & args)
 {
 	if (!m_tv.SelectPreviousChannel()) {
-		m_output << "TV is turned off\n";
+		m_output << "Channel isn't changed\nTV is turned off\n";
 		return true;
 	}
 	m_output << "Channel is changed to " << m_tv.GetChannel() << "\n";
