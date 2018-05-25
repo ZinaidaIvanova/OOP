@@ -11,8 +11,7 @@ public:
 
 private:
 	bool m_isOn = false;
-	int m_channelNum = 0;
-	int m_channelNumAfterTurningOn = 1;
+	int m_channelNum = 1;
 	int m_prevChannelNum = 1;
 };
 

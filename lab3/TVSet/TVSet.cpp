@@ -9,6 +9,10 @@ bool CTVSet::IsTurnedOn() const
 
 int CTVSet::GetChannel() const
 {
+	if (!m_isOn)
+	{
+		return 0;
+	}
 	return m_channelNum;
 }
 
@@ -17,7 +21,6 @@ void CTVSet::TurnOn()
 	if (!m_isOn)
 	{
 		m_isOn = true;
-		m_channelNum = m_channelNumAfterTurningOn;
 	}
 }
 
@@ -26,8 +29,6 @@ void CTVSet::TurnOff()
 	if (m_isOn)
 	{
 		m_isOn = false;
-		m_channelNumAfterTurningOn = m_channelNum;
-		m_channelNum = 0;
 	}
 }
 
