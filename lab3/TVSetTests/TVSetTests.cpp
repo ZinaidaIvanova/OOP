@@ -41,10 +41,10 @@ TEST_CASE("Changing TVSet channel")
 	SECTION("TVSet channel selection")
 	{
 		tv.TurnOn();
-		tv.SelectChannel(1);
+		CHECK(tv.SelectChannel(1) == true);
 		CHECK(tv.GetChannel() == 1);
 
-		tv.SelectChannel(0);
+		CHECK(tv.SelectChannel(0) == false);
 		CHECK(tv.GetChannel() == 1);
 
 		tv.SelectChannel(99);
@@ -53,7 +53,7 @@ TEST_CASE("Changing TVSet channel")
 		tv.SelectChannel(50);
 		CHECK(tv.GetChannel() == 50);
 
-		tv.SelectChannel(100);
+		CHECK(tv.SelectChannel(100) == false);
 		CHECK(tv.GetChannel() == 50);
 
 		tv.TurnOff();
@@ -80,6 +80,7 @@ TEST_CASE("Changing TVSet channel")
 		CHECK(tv.GetChannel() == 50);
 
 		tv.TurnOff();
+		CHECK(tv.SelectPreviousChannel() == false);
 		tv.TurnOn();
 		tv.SelectPreviousChannel();
 		CHECK(tv.GetChannel() == 25);

@@ -5,9 +5,9 @@ public:
 	void TurnOn();
 	void TurnOff();
 	bool IsTurnedOn() const;
-	void SelectChannel(int newChannelNum); 
+	bool SelectChannel(int newChannelNum); 
 	int GetChannel() const;
-	void SelectPreviousChannel();
+	bool SelectPreviousChannel();
 
 private:
 	bool m_isOn = false;

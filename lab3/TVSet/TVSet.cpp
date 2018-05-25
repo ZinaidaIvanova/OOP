@@ -32,19 +32,23 @@ void CTVSet::TurnOff()
 	}
 }
 
-void CTVSet::SelectChannel(int newChannelNum)
+bool CTVSet::SelectChannel(int newChannelNum)
 {
 	if ((m_isOn) &&(newChannelNum <= 99) && (newChannelNum >= 1))
 	{
 		m_prevChannelNum = m_channelNum;
 		m_channelNum = newChannelNum;
+		return true;
 	}
+	return false;
 }
 
-void CTVSet::SelectPreviousChannel()
+bool CTVSet::SelectPreviousChannel()
 {
 	if (m_isOn)
 	{
 		std::swap(m_channelNum, m_prevChannelNum);
+		return true;
 	}
+	return false;
 }
