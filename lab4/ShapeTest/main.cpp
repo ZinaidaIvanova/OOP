@@ -1,5 +1,4 @@
 
-int main()
-{
-	return 0;
-}
+#define CATCH_CONFIG_MAIN 
+#include "../../catch/catch.hpp"
+
