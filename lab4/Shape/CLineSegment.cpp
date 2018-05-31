@@ -17,25 +17,36 @@ double CLineSegment::GetArea()const
 
 double CLineSegment::GetPerimeter() const
 {
-	return 1.0;
+	double X = m_secondVertix.x() - m_firstVerix.x();
+	double Y = m_secondVertix.y() - m_firstVerix.y();
+	return std::sqrt(X * X + Y * Y);
 }
 
 std::string CLineSegment::ToString() const
 {
+	/*std::ostringstream str;
+	str << std::fixed << std::setprecision(1)
+	str << "Line segment:" << std::endl  
+		<< "\tStart point: (" << GetStartPoint().x() << ", " << GetStartPoint().y() << ")" << std::endl
+		<< "\tEnd point: (" << GetEndPoint().x() << ", " << GetEndPoint().y() << ")" << std::endl
+		<< "\tArea: " << GetArea() << std::endl
+		<< "\tPerimeter: " << GetPerimeter() << std::endl
+		<< "\tColor: " << GetOutlineColor() << std::endl;
+	return str.str();*/
 	return std::string();
 }
 
 std::string CLineSegment::GetOutlineColor() const
 {
-	return std::string();
+	return m_color;
 }
 
-CPoint CLineSegment::GetStartPOint() const
+CPoint CLineSegment::GetStartPoint() const
 {
-	return CPoint(0, 0);
+	return m_firstVerix;
 }
 
 CPoint CLineSegment::GetEndPoint() const
 {
-	return CPoint(0, 0);
+	return m_secondVertix;
 }

@@ -12,7 +12,7 @@ public:
 	double GetPerimeter() const override;
 	std::string ToString() const override;
 	std::string GetOutlineColor() const override;
-	CPoint GetStartPOint() const;
+	CPoint GetStartPoint() const;
 	CPoint GetEndPoint() const;
 
 private:
