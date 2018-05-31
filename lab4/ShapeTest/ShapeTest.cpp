@@ -20,8 +20,10 @@ TEST_CASE("Check line segment properties")
 	CPoint vertix1(3, -4);
 	CPoint vertix2(-8, 6);
 	CPoint vertix3(0, 0);
-	CLineSegment line1(vertix1, vertix3, "000000");
-	CLineSegment line2(vertix3, vertix2, "FF0000");
+	CLineSegment line1(vertix1, vertix3);
+	CLineSegment line2(vertix3, vertix2);
+	line1.SetOutlineColor("000000");
+	line2.SetOutlineColor("FF0000");
 
 	SECTION("All line segments areas equal zero")
 	{

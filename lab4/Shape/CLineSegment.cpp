@@ -2,10 +2,9 @@
 #include "CLineSegment.h"
 
 
-CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix, std::string const & color) :
+CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix) :
 	m_firstVerix(firstVerix),
-	m_secondVertix(secondVertix),
-	m_color(color)
+	m_secondVertix(secondVertix)
 {
 }
 
@@ -36,10 +35,6 @@ std::string CLineSegment::ToString() const
 	return std::string();
 }
 
-std::string CLineSegment::GetOutlineColor() const
-{
-	return m_color;
-}
 
 CPoint CLineSegment::GetStartPoint() const
 {
