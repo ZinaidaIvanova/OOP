@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Point.h"
+#include "CPoint.h"
 
 
 CPoint::CPoint(double const & x, double const & y):m_x(x), m_y(y)
@@ -14,4 +14,10 @@ double CPoint::x() const
 double CPoint::y() const
 {
 	return m_y;
+}
+
+void CPoint::SetPoint(double const & x, double const & y)
+{
+	m_x = x;
+	m_y = y;
 }

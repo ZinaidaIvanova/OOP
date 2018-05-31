@@ -163,7 +163,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Shape\Point.cpp" />
+    <ClCompile Include="..\Shape\CLineSegment.cpp" />
+    <ClCompile Include="..\Shape\CPoint.cpp" />
+    <ClCompile Include="..\Shape\IShape.cpp" />
     <ClCompile Include="main.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
