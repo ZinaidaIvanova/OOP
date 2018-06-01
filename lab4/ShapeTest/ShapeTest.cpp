@@ -120,9 +120,47 @@ Fill color: FF00FF)");
 
 TEST_CASE("Check rectangle properties")
 {
-	CPoint rightTopVertix(30, 40);
-	CRectangle rectangle(rightTopVertix, 50, 70);
+	CPoint leftTopVertix(30, 40);
+	CRectangle rectangle(leftTopVertix, 50, 70);
 	rectangle.SetFillColor("FF00FF");
 	rectangle.SetOutlineColor("000000");
 
+	SECTION("Rectangle has perimeter")
+	{
+		CHECK(rectangle.GetPerimeter() == 240);
+	}
+
+	SECTION("Rectangle has area")
+	{
+		CHECK(rectangle.GetArea() == 3500);
+	}
+
+	SECTION("Rectangle has color")
+	{
+		CHECK(rectangle.GetFillColor() == "FF00FF");
+		CHECK(rectangle.GetOutlineColor() == "000000");
+	}
+
+	SECTION("Rectangle has vertices, width and height")
+	{
+		CHECK(rectangle.GetLeftTop().x() == 30);
+		CHECK(rectangle.GetLeftTop().y() == 40);
+
+		CHECK(rectangle.GetRightBottom().x() == 80);
+		CHECK(rectangle.GetRightBottom().y() == -30);
+
+		CHECK(rectangle.GetWidth() == 50);
+		CHECK(rectangle.GetHeight() == 70);
+	}
+
+	SECTION("Rectangle info can be printed")
+	{
+		CHECK(rectangle.ToString() == R"(Rectangle
+Left top vertex: (30, 40)
+Right bottom vertex: (100, -30)
+Area: 350
+Perimeter: 240
+Line color: 000000
+Fill color: FF00FF)");
+	}
 }
