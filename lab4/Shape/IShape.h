@@ -8,6 +8,6 @@ public:
 	std::string GetOutlineColor() const;
 	void SetOutlineColor(std::string color);
 private:
-	std::string m_color;
+	std::string m_color = "000000";
 };
 

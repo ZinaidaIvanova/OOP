@@ -11,6 +11,6 @@ public:
 	virtual ~ISolidShape();
 
 private:
-	std::string m_fillColor;
+	std::string m_fillColor = "000000";
 };
 

@@ -169,6 +169,7 @@
   <ItemGroup>
     <ClCompile Include="..\Shape\CLineSegment.cpp" />
     <ClCompile Include="..\Shape\CPoint.cpp" />
+    <ClCompile Include="..\Shape\CRectangle.cpp" />
     <ClCompile Include="..\Shape\CTriangle.cpp" />
     <ClCompile Include="..\Shape\IShape.cpp" />
     <ClCompile Include="..\Shape\ISolidShape.cpp" />

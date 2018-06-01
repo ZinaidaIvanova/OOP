@@ -4,6 +4,7 @@
 #include "../Shape/CLineSegment.h"
 #include "../Shape/ISolidShape.h"
 #include "../Shape/CTriangle.h"
+#include "../Shape/CRectangle.h"
 
 
 TEST_CASE("Check Point creation and get coordinates")
@@ -116,3 +117,12 @@ Fill color: FF00FF)");
 	}
 }
 
+
+TEST_CASE("Check rectangle properties")
+{
+	CPoint rightTopVertix(30, 40);
+	CRectangle rectangle(rightTopVertix, 50, 70);
+	rectangle.SetFillColor("FF00FF");
+	rectangle.SetOutlineColor("000000");
+
+}
