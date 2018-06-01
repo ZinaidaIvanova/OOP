@@ -3,10 +3,12 @@
 #include <iomanip>
 #include <sstream>
 
-CTriangle::CTriangle(CPoint const & firstVerex, CPoint const & secondVertex, CPoint const & thirdVertex):
+CTriangle::CTriangle(CPoint const & firstVerex, CPoint const & secondVertex, CPoint const & thirdVertex, std::string& outLineColor, std::string& fillColor):
 m_vertex1(firstVerex),
 m_vertex2(secondVertex),
-m_vertex3(thirdVertex)
+m_vertex3(thirdVertex),
+m_color(outLineColor),
+m_fillColor(fillColor)
 {
 }
 
@@ -58,4 +60,24 @@ double CTriangle::GetSideLength(CPoint const & firstVerix, CPoint const & second
 	double X = secondVertix.x() - firstVerix.x();
 	double Y = secondVertix.y() - firstVerix.y();
 	return std::sqrt(X * X + Y * Y);
+}
+
+std::string CTriangle::GetOutlineColor() const
+{
+	return m_color;
+}
+
+void CTriangle::SetOutlineColor(std::string color)
+{
+	m_color = color;
+}
+
+void CTriangle::SetFillColor(std::string color)
+{
+	m_fillColor = color;
+}
+
+std::string CTriangle::GetFillColor() const
+{
+	return m_fillColor;
 }

@@ -2,6 +2,7 @@
 class CPoint
 {
 public:
+	CPoint();
 	CPoint(double const &x, double const &y);
 	double x() const;
 	double y() const;

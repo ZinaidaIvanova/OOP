@@ -3,6 +3,10 @@
 #include "CLineSegment.h"
 #include "CPoint.h"
 #include "IShape.h"
+#include "CCircle.h"
+#include "CRectangle.h"
+#include "CTriangle.h"
+#include "ISolidShape.h"
 
 
 

@@ -23,10 +23,8 @@ TEST_CASE("Check line segment properties")
 	CPoint vertix1(3, -4);
 	CPoint vertix2(-8, 6);
 	CPoint vertix3(0, 0);
-	CLineSegment line1(vertix1, vertix3);
-	CLineSegment line2(vertix3, vertix2);
-	line1.SetOutlineColor("000000");
-	line2.SetOutlineColor("FF0000");
+	CLineSegment line1(vertix1, vertix3, "000000");
+	CLineSegment line2(vertix3, vertix2, "FF0000");
 
 	SECTION("All line segments areas equal zero")
 	{
@@ -72,9 +70,10 @@ TEST_CASE("Check triangle properties")
 	CPoint vertix1(3, -4);
 	CPoint vertix2(-8, 6);
 	CPoint vertix3(0, 0);
-	CTriangle triangle(vertix1, vertix2, vertix3);
-	triangle.SetFillColor("FF00FF");
-	triangle.SetOutlineColor("000000");
+	std::string outlineColor = "000000";
+	std::string color = "FF00FF";
+
+	CTriangle triangle(vertix1, vertix2, vertix3, outlineColor, color);
 
 	SECTION("Triangle has perimeter")
 	{
@@ -123,9 +122,9 @@ Fill color: FF00FF
 TEST_CASE("Check rectangle properties")
 {
 	CPoint leftTopVertix(30, 40);
-	CRectangle rectangle(leftTopVertix, 50, 70);
-	rectangle.SetFillColor("FF00FF");
-	rectangle.SetOutlineColor("000000");
+	std::string outlineColor = "000000";
+	std::string color = "FF00FF";
+	CRectangle rectangle(leftTopVertix, 50, 70, outlineColor, color);
 
 	SECTION("Rectangle has perimeter")
 	{
@@ -173,9 +172,9 @@ Fill color: FF00FF
 TEST_CASE("Check circle properties")
 {
 	CPoint center(130, 80);
-	CCircle circle(center, 50);
-	circle.SetFillColor("FF00FF");
-	circle.SetOutlineColor("000000");
+	std::string outlineColor = "000000";
+	std::string color = "FF00FF";
+	CCircle circle(center, 50, outlineColor, color);
 	constexpr double M_PI = 3.141592;
 
 	SECTION("Circle has perimeter")

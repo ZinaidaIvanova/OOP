@@ -5,12 +5,9 @@ class ISolidShape :
 	public IShape
 {
 public:
-	void SetFillColor(std::string color);
-	std::string GetFillColor() const;
+	virtual void SetFillColor(std::string color) = 0;
+	virtual std::string GetFillColor() const = 0;
 
 	virtual ~ISolidShape();
-
-private:
-	std::string m_fillColor = "000000";
 };
 

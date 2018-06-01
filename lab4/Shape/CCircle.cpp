@@ -8,9 +8,11 @@
 
 constexpr double M_PI = 3.141592;
 
-CCircle::CCircle(CPoint center, double radius):
+CCircle::CCircle(CPoint& center, double radius, std::string& outLineColor, std::string& fillColor):
 m_center(center),
-m_radius(radius)
+m_radius(radius),
+m_color(outLineColor),
+m_fillColor(fillColor)
 {
 }
 
@@ -46,4 +48,25 @@ CPoint CCircle::GetCenter() const
 double CCircle::GetRadius() const
 {
 	return m_radius;
+}
+
+
+std::string CCircle::GetOutlineColor() const
+{
+	return m_color;
+}
+
+void CCircle::SetOutlineColor(std::string color)
+{
+	m_color = color;
+}
+
+void CCircle::SetFillColor(std::string color)
+{
+	m_fillColor = color;
+}
+
+std::string CCircle::GetFillColor() const
+{
+	return m_fillColor;
 }

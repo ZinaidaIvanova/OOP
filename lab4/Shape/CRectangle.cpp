@@ -3,10 +3,12 @@
 #include <iomanip>
 #include <sstream>
 
-CRectangle::CRectangle(CPoint leftTopPoint, double width, double height):
+CRectangle::CRectangle(CPoint& leftTopPoint, double width, double height, std::string& outLineColor, std::string& fillColor):
 	m_leftTop(leftTopPoint),
 	m_width(width),
-	m_height(height)
+	m_height(height),
+	m_color(outLineColor),
+	m_fillColor(fillColor)
 {
 }
 
@@ -54,4 +56,24 @@ double CRectangle::GetWidth() const
 double CRectangle::GetHeight() const
 {
 	return m_height;
+}
+
+std::string CRectangle::GetOutlineColor() const
+{
+	return m_color;
+}
+
+void CRectangle::SetOutlineColor(std::string color)
+{
+	m_color = color;
+}
+
+void CRectangle::SetFillColor(std::string color)
+{
+	m_fillColor = color;
+}
+
+std::string CRectangle::GetFillColor() const
+{
+	return m_fillColor;
 }

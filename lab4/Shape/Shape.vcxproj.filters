@@ -42,6 +42,9 @@
     <ClInclude Include="CCircle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="CShapeCreater.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="CCircle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CShapeCreater.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,9 +3,10 @@
 #include <iomanip>
 #include <sstream>
 
-CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix) :
+CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix, std::string color) :
 	m_firstVerix(firstVerix),
-	m_secondVertix(secondVertix)
+	m_secondVertix(secondVertix),
+	m_color(color)
 {
 }
 
@@ -44,4 +45,14 @@ CPoint CLineSegment::GetStartPoint() const
 CPoint CLineSegment::GetEndPoint() const
 {
 	return m_secondVertix;
+}
+
+std::string CLineSegment::GetOutlineColor() const
+{
+	return m_color;
+}
+
+void CLineSegment::SetOutlineColor(std::string color)
+{
+	m_color = color;
 }
