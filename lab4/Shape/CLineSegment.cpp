@@ -23,8 +23,8 @@ double CLineSegment::GetPerimeter() const
 
 std::string CLineSegment::ToString() const
 {
-	/*std::ostringstream str;
-	str << std::fixed << std::setprecision(1)
+	/*std::stringstream str;
+	str << std::fixed << std::setprecision(1);
 	str << "Line segment:" << std::endl  
 		<< "\tStart point: (" << GetStartPoint().x() << ", " << GetStartPoint().y() << ")" << std::endl
 		<< "\tEnd point: (" << GetEndPoint().x() << ", " << GetEndPoint().y() << ")" << std::endl

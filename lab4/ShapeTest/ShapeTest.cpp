@@ -71,6 +71,8 @@ TEST_CASE("Check triangle properties")
 	CPoint vertix2(-8, 6);
 	CPoint vertix3(0, 0);
 	CTriangle triangle(vertix1, vertix2, vertix3);
+	triangle.SetFillColor("FF00FF");
+	triangle.SetOutlineColor("000000");
 
 	SECTION("Triangle has perimeter")
 	{
@@ -80,22 +82,37 @@ TEST_CASE("Check triangle properties")
 
 	SECTION("Triangle has area")
 	{
+		CHECK(static_cast<int>(triangle.GetArea()) == 7);
+	}
+
+	SECTION("Triangle has color")
+	{
+		CHECK(triangle.GetFillColor() == "FF00FF");
+		CHECK(triangle.GetOutlineColor() == "000000");
+	}
+
+	SECTION("Triangle has vertices")
+	{
+		CHECK(triangle.GetVertex1().x() == 3.0);
+		CHECK(triangle.GetVertex1().y() == -4.0);
+
+		CHECK(triangle.GetVertex2().x() == -8);
+		CHECK(triangle.GetVertex2().y() == 6);
 		
-	}
-
-	SECTION("Triangle has color")
-	{
-
-	}
-
-	SECTION("Triangle has color")
-	{
-
+		CHECK(triangle.GetVertex3().x() == 0);
+		CHECK(triangle.GetVertex3().y() == 0);
 	} 
 
 	SECTION("Triangle info can be printed")
 	{
-
+		CHECK(triangle.ToString() == R"(Triangle
+First vertex: (3.0, -4.0)
+Second vertex: (-8.0, 6.0)
+Third vertex: (0.0, 0.0)
+Area: 7.0
+Perimeter: 29.8
+Line color: 000000
+Fill color: FF00FF)");
 	}
 }
 

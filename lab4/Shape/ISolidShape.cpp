@@ -4,11 +4,12 @@
 
 void ISolidShape::SetFillColor(std::string color)
 {
+	m_fillColor = color;
 }
 
 std::string ISolidShape::GetFillColor() const
 {
-	return std::string();
+	return m_fillColor;
 }
 
 ISolidShape::~ISolidShape()
