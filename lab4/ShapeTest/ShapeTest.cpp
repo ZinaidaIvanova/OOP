@@ -1,10 +1,15 @@
 #include "stdafx.h"
+#include "../Shape/CCircle.h"
 #include "../Shape/IShape.h"
 #include "../Shape/CPoint.h"
 #include "../Shape/CLineSegment.h"
 #include "../Shape/ISolidShape.h"
 #include "../Shape/CTriangle.h"
 #include "../Shape/CRectangle.h"
+
+
+#define _USE_MATH_DEFINES
+#include <cmath>
 
 
 TEST_CASE("Check Point creation and get coordinates")
@@ -156,11 +161,58 @@ TEST_CASE("Check rectangle properties")
 	SECTION("Rectangle info can be printed")
 	{
 		CHECK(rectangle.ToString() == R"(Rectangle
-Left top vertex: (30, 40)
-Right bottom vertex: (100, -30)
-Area: 350
-Perimeter: 240
+Left top vertex: (30.0, 40.0)
+Right bottom vertex: (100.0, -30.0)
+Width: 50.0
+Height: 70.0
+Area: 350.0
+Perimeter: 240.0
 Line color: 000000
 Fill color: FF00FF)");
 	}
 }
+
+TEST_CASE("Check circle properties")
+{
+	CPoint center(130, 80);
+	CCircle circle(center, 50);
+	circle.SetFillColor("FF00FF");
+	circle.SetOutlineColor("000000");
+
+	SECTION("Circle has perimeter")
+	{
+		double lenght = 100 * M_PI;
+		CHECK(circle.GetPerimeter() == 240);
+	}
+
+	SECTION("Circle has area")
+	{
+		CHECK(circle.GetArea() == 2500 * M_PI);
+	}
+
+	SECTION("Circle has color")
+	{
+		CHECK(circle.GetFillColor() == "FF00FF");
+		CHECK(circle.GetOutlineColor() == "000000");
+	}
+
+	SECTION("Circle has vertices, width and height")
+	{
+		CHECK(circle.GetCenter().x() == 130);
+		CHECK(circle.GetCenter().y() == 80);
+
+		CHECK(circle.GetRadius() == 50);
+	}
+
+	SECTION("Circle info can be printed")
+	{
+		CHECK(circle.ToString() == R"(Circle
+Center: (130, 80)
+Radius: 50.0
+Area: 7853.9
+Perimeter: 314.1
+Line color: 000000
+Fill color: FF00FF)");
+	}
+}
+

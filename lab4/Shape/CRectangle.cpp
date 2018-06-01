@@ -25,6 +25,8 @@ std::string CRectangle::ToString() const
 	str << "Rectangle" << std::endl
 		<< "Left top vertex: (" << GetLeftTop().x() << ", " << GetLeftTop().y() << ")" << std::endl
 		<< "Right bottom vertex: (" << GetRightBottom().x() << ", " << GetRightBottom().y() << ")" << std::endl
+		<< "Width: " << GetWidth() << std::endl
+		<< "Height: " << GetHeight() << std::endl
 		<< "Area: " << GetArea() << std::endl
 		<< "Perimeter: " << GetPerimeter << std::endl
 		<< "Line color: " << GetOutlineColor() << std::endl
