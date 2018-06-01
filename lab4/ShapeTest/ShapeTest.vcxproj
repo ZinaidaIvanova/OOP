@@ -167,6 +167,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Shape\CCircle.cpp" />
     <ClCompile Include="..\Shape\CLineSegment.cpp" />
     <ClCompile Include="..\Shape\CPoint.cpp" />
     <ClCompile Include="..\Shape\CRectangle.cpp" />
