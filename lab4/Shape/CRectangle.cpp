@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "CRectangle.h"
+#include <iomanip>
+#include <sstream>
 
 CRectangle::CRectangle(CPoint leftTopPoint, double width, double height):
 	m_leftTop(leftTopPoint),
@@ -20,7 +22,7 @@ double CRectangle::GetPerimeter() const
 
 std::string CRectangle::ToString() const
 {
-	/*std::ostringstream str;
+	std::ostringstream str;
 	str << std::fixed << std::setprecision(1);
 	str << "Rectangle" << std::endl
 		<< "Left top vertex: (" << GetLeftTop().x() << ", " << GetLeftTop().y() << ")" << std::endl
@@ -28,11 +30,10 @@ std::string CRectangle::ToString() const
 		<< "Width: " << GetWidth() << std::endl
 		<< "Height: " << GetHeight() << std::endl
 		<< "Area: " << GetArea() << std::endl
-		<< "Perimeter: " << GetPerimeter << std::endl
+		<< "Perimeter: " << GetPerimeter() << std::endl
 		<< "Line color: " << GetOutlineColor() << std::endl
 		<< "Fill color: " << GetFillColor() << std::endl;
-	return str.str();*/
-	return std::string();
+	return str.str();
 }
 
 CPoint CRectangle::GetLeftTop() const

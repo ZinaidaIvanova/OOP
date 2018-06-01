@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CLineSegment.h"
-
+#include <iomanip>
+#include <sstream>
 
 CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix) :
 	m_firstVerix(firstVerix),
@@ -23,16 +24,15 @@ double CLineSegment::GetPerimeter() const
 
 std::string CLineSegment::ToString() const
 {
-	/*std::stringstream str;
+	std::stringstream str;
 	str << std::fixed << std::setprecision(1);
 	str << "Line segment:" << std::endl  
-		<< "\tStart point: (" << GetStartPoint().x() << ", " << GetStartPoint().y() << ")" << std::endl
-		<< "\tEnd point: (" << GetEndPoint().x() << ", " << GetEndPoint().y() << ")" << std::endl
-		<< "\tArea: " << GetArea() << std::endl
-		<< "\tPerimeter: " << GetPerimeter() << std::endl
-		<< "\tColor: " << GetOutlineColor() << std::endl;
-	return str.str();*/
-	return std::string();
+		<< "Start point: (" << GetStartPoint().x() << ", " << GetStartPoint().y() << ")" << std::endl
+		<< "End point: (" << GetEndPoint().x() << ", " << GetEndPoint().y() << ")" << std::endl
+		<< "Area: " << GetArea() << std::endl
+		<< "Perimeter: " << GetPerimeter() << std::endl
+		<< "Color: " << GetOutlineColor() << std::endl;
+	return str.str();
 }
 
 

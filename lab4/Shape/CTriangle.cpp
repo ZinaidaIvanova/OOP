@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CTriangle.h"
-
+#include <iomanip>
+#include <sstream>
 
 CTriangle::CTriangle(CPoint const & firstVerex, CPoint const & secondVertex, CPoint const & thirdVertex):
 m_vertex1(firstVerex),
@@ -24,7 +25,7 @@ double CTriangle::GetPerimeter() const
 
 std::string CTriangle::ToString() const
 {
-	/*std::ostringstream str;
+	std::ostringstream str;
 	str << std::fixed << std::setprecision(1);
 	str << "Triangle" << std::endl
 		<< "First vertex: (" << GetVertex1().x() << ", " << GetVertex1().y() << ")" << std::endl
@@ -34,8 +35,7 @@ std::string CTriangle::ToString() const
 		<< "Perimeter: " << GetPerimeter() << std::endl
 		<< "Line color: " << GetOutlineColor() << std::endl
 		<< "Fill color: " << GetFillColor() << std::endl;
-	return str.str();*/
-	return std::string();
+	return str.str();
 }
 
 CPoint CTriangle::GetVertex1() const

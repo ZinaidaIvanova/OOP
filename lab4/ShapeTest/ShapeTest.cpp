@@ -7,11 +7,6 @@
 #include "../Shape/CTriangle.h"
 #include "../Shape/CRectangle.h"
 
-
-#define _USE_MATH_DEFINES
-#include <cmath>
-
-
 TEST_CASE("Check Point creation and get coordinates")
 {
 	CPoint newPoint(0.5, -1);
@@ -62,12 +57,13 @@ TEST_CASE("Check line segment properties")
 
 	SECTION("Line segment info can be printed")
 	{
-		CHECK(line1.ToString() == R"(Line segment
-Start point: (3, -4)
-End point: (0, 0)
+		CHECK(line1.ToString() == R"(Line segment:
+Start point: (3.0, -4.0)
+End point: (0.0, 0.0)
 Area: 0.0
-Perimeter: 5
-Color: 000000)");
+Perimeter: 5.0
+Color: 000000
+)");
 	}
 }
 
@@ -116,9 +112,10 @@ First vertex: (3.0, -4.0)
 Second vertex: (-8.0, 6.0)
 Third vertex: (0.0, 0.0)
 Area: 7.0
-Perimeter: 29.8
+Perimeter: 29.9
 Line color: 000000
-Fill color: FF00FF)");
+Fill color: FF00FF
+)");
 	}
 }
 
@@ -162,13 +159,14 @@ TEST_CASE("Check rectangle properties")
 	{
 		CHECK(rectangle.ToString() == R"(Rectangle
 Left top vertex: (30.0, 40.0)
-Right bottom vertex: (100.0, -30.0)
+Right bottom vertex: (80.0, -30.0)
 Width: 50.0
 Height: 70.0
-Area: 350.0
+Area: 3500.0
 Perimeter: 240.0
 Line color: 000000
-Fill color: FF00FF)");
+Fill color: FF00FF
+)");
 	}
 }
 
@@ -178,11 +176,12 @@ TEST_CASE("Check circle properties")
 	CCircle circle(center, 50);
 	circle.SetFillColor("FF00FF");
 	circle.SetOutlineColor("000000");
+	constexpr double M_PI = 3.141592;
 
 	SECTION("Circle has perimeter")
 	{
 		double lenght = 100 * M_PI;
-		CHECK(circle.GetPerimeter() == 240);
+		CHECK(circle.GetPerimeter() == 314.1592);
 	}
 
 	SECTION("Circle has area")
@@ -207,12 +206,13 @@ TEST_CASE("Check circle properties")
 	SECTION("Circle info can be printed")
 	{
 		CHECK(circle.ToString() == R"(Circle
-Center: (130, 80)
+Center: (130.0, 80.0)
 Radius: 50.0
-Area: 7853.9
-Perimeter: 314.1
+Area: 7854.0
+Perimeter: 314.2
 Line color: 000000
-Fill color: FF00FF)");
+Fill color: FF00FF
+)");
 	}
 }
 
