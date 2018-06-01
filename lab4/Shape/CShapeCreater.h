@@ -8,7 +8,7 @@ class CShapeCreater
 {
 public:
 	CShapeCreater(std::istream &input);
-	std::shared_ptr<IShape> GetShapeFromStream(std::istream &input) const;
+	std::shared_ptr<IShape> GetShapeFromStream() const;
 
 private:
 	std::shared_ptr<IShape> CreateLine(std::istream &args) const;
