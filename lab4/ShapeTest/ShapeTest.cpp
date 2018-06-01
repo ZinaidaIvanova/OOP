@@ -2,6 +2,8 @@
 #include "../Shape/IShape.h"
 #include "../Shape/CPoint.h"
 #include "../Shape/CLineSegment.h"
+#include "../Shape/ISolidShape.h"
+#include "../Shape/CTriangle.h"
 
 
 TEST_CASE("Check Point creation and get coordinates")
@@ -61,6 +63,39 @@ Area: 0.0
 Perimeter: 5
 Color: 000000)");
 	}
-
-
 }
+
+TEST_CASE("Check triangle properties")
+{
+	CPoint vertix1(3, -4);
+	CPoint vertix2(-8, 6);
+	CPoint vertix3(0, 0);
+	CTriangle triangle(vertix1, vertix2, vertix3);
+
+	SECTION("Triangle has perimeter")
+	{
+		double perim = 15.0 + std::sqrt(221);
+		CHECK(triangle.GetPerimeter() == perim);
+	}
+
+	SECTION("Triangle has area")
+	{
+		
+	}
+
+	SECTION("Triangle has color")
+	{
+
+	}
+
+	SECTION("Triangle has color")
+	{
+
+	} 
+
+	SECTION("Triangle info can be printed")
+	{
+
+	}
+}
+
