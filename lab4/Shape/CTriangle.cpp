@@ -2,6 +2,7 @@
 #include "CTriangle.h"
 #include <iomanip>
 #include <sstream>
+#include "SecondaryFunctions.h"
 
 CTriangle::CTriangle(CPoint const & firstVerex, CPoint const & secondVertex, CPoint const & thirdVertex, std::string& outLineColor, std::string& fillColor):
 m_vertex1(firstVerex),
@@ -16,13 +17,13 @@ m_fillColor(fillColor)
 double CTriangle::GetArea() const
 {
 	double halfPerimeter = 0.5*GetPerimeter();
-	return std::sqrt(halfPerimeter*(halfPerimeter - GetSideLength(m_vertex1, m_vertex2))*(halfPerimeter - GetSideLength(m_vertex2, m_vertex3))
-		*(halfPerimeter - GetSideLength(m_vertex3, m_vertex1)));
+	return std::sqrt(halfPerimeter*(halfPerimeter - GetLength(m_vertex1, m_vertex2))*(halfPerimeter - GetLength(m_vertex2, m_vertex3))
+		*(halfPerimeter - GetLength(m_vertex3, m_vertex1)));
 }
 
 double CTriangle::GetPerimeter() const
 {
-	return GetSideLength(m_vertex1, m_vertex2) + GetSideLength(m_vertex2, m_vertex3) + GetSideLength(m_vertex3, m_vertex1);
+	return GetLength(m_vertex1, m_vertex2) + GetLength(m_vertex2, m_vertex3) + GetLength(m_vertex3, m_vertex1);
 }
 
 std::string CTriangle::ToString() const
@@ -53,13 +54,6 @@ CPoint CTriangle::GetVertex2() const
 CPoint CTriangle::GetVertex3() const
 {
 	return m_vertex3;
-}
-
-double CTriangle::GetSideLength(CPoint const & firstVerix, CPoint const & secondVertix) const
-{
-	double X = secondVertix.x() - firstVerix.x();
-	double Y = secondVertix.y() - firstVerix.y();
-	return std::sqrt(X * X + Y * Y);
 }
 
 std::string CTriangle::GetOutlineColor() const

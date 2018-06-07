@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CLineSegment.h"
+#include "SecondaryFunctions.h"
 #include <iomanip>
 #include <sstream>
 
@@ -18,9 +19,7 @@ double CLineSegment::GetArea()const
 
 double CLineSegment::GetPerimeter() const
 {
-	double X = m_secondVertix.x() - m_firstVerix.x();
-	double Y = m_secondVertix.y() - m_firstVerix.y();
-	return std::sqrt(X * X + Y * Y);
+	return GetLength(m_firstVerix, m_secondVertix);
 }
 
 std::string CLineSegment::ToString() const

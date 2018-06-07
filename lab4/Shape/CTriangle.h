@@ -25,6 +25,5 @@ private:
 	CPoint m_vertex1, m_vertex2, m_vertex3;
 	std::string m_color = "000000";
 	std::string m_fillColor = "000000";
-	double GetSideLength(CPoint const & firstVerix, CPoint const& secondVertix) const;
 };
 
