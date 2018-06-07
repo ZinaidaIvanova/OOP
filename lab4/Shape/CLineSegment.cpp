@@ -51,7 +51,7 @@ std::string CLineSegment::GetOutlineColor() const
 	return m_color;
 }
 
-void CLineSegment::SetOutlineColor(std::string color)
+void CLineSegment::SetOutlineColor(const std::string& color)
 {
 	m_color = color;
 }

@@ -63,12 +63,12 @@ std::string CRectangle::GetOutlineColor() const
 	return m_color;
 }
 
-void CRectangle::SetOutlineColor(std::string color)
+void CRectangle::SetOutlineColor(const std::string& color)
 {
 	m_color = color;
 }
 
-void CRectangle::SetFillColor(std::string color)
+void CRectangle::SetFillColor(const std::string& color)
 {
 	m_fillColor = color;
 }

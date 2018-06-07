@@ -61,12 +61,12 @@ std::string CTriangle::GetOutlineColor() const
 	return m_color;
 }
 
-void CTriangle::SetOutlineColor(std::string color)
+void CTriangle::SetOutlineColor(const std::string& color)
 {
 	m_color = color;
 }
 
-void CTriangle::SetFillColor(std::string color)
+void CTriangle::SetFillColor(const std::string& color)
 {
 	m_fillColor = color;
 }

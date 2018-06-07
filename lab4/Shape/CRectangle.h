@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include "ISolidShape.h"
 #include "CPoint.h"
 
@@ -13,8 +13,8 @@ public:
 	std::string ToString() const override;
 	
 	std::string GetOutlineColor() const override;
-	void SetOutlineColor(std::string color) override;
-	void SetFillColor(std::string color) override;
+	void SetOutlineColor(const std::string& color) override;
+	void SetFillColor(const std::string& color) override;
 	std::string GetFillColor() const override;
 	
 	CPoint GetLeftTop() const;

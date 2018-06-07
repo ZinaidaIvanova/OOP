@@ -56,12 +56,12 @@ std::string CCircle::GetOutlineColor() const
 	return m_color;
 }
 
-void CCircle::SetOutlineColor(std::string color)
+void CCircle::SetOutlineColor(const std::string& color)
 {
 	m_color = color;
 }
 
-void CCircle::SetFillColor(std::string color)
+void CCircle::SetFillColor(const std::string& color)
 {
 	m_fillColor = color;
 }

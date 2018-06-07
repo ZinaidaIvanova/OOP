@@ -14,7 +14,7 @@ public:
 	std::string ToString() const override;
 
 	std::string GetOutlineColor() const override;
-	void SetOutlineColor(std::string color) override;
+	void SetOutlineColor(const std::string& color) override;
 
 	CPoint GetStartPoint() const;
 	CPoint GetEndPoint() const;
