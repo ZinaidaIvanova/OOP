@@ -2,11 +2,10 @@
 #include "CCircle.h"
 #include <iomanip>
 #include <sstream>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-//#include <cmath>
-//#define _USE_MATH_DEFINES
 
-constexpr double M_PI = 3.141592;
 
 CCircle::CCircle(CPoint& center, double radius, std::string& outLineColor, std::string& fillColor):
 m_center(center),

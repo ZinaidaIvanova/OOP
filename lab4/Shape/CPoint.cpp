@@ -3,10 +3,6 @@
 #include <iomanip>
 #include <sstream>
 
-CPoint::CPoint()
-{
-}
-
 CPoint::CPoint(double const & x, double const & y):m_x(x), m_y(y)
 {
 }

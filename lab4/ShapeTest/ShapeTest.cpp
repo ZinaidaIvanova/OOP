@@ -7,6 +7,8 @@
 #include "../Shape/CTriangle.h"
 #include "../Shape/CRectangle.h"
 #include "../Shape/SecondaryFunctions.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 TEST_CASE("Check Point creation and get coordinates")
 {
@@ -176,8 +178,7 @@ TEST_CASE("Check circle properties")
 	std::string outlineColor = "000000";
 	std::string color = "FF00FF";
 	CCircle circle(center, 50, outlineColor, color);
-	constexpr double M_PI = 3.141592;
-
+	
 	SECTION("Circle has perimeter")
 	{
 		double lenght = 100 * M_PI;
