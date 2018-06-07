@@ -7,7 +7,7 @@ class CLineSegment final:
 	public IShape
 {
 public:
-	CLineSegment(CPoint const & firstVerix, CPoint const& secondVertix, std::string color);
+	CLineSegment(CPoint const & firstVertex, CPoint const& secondVertix, std::string color);
 
 	double GetArea() const override;
 	double GetPerimeter() const override;
@@ -20,7 +20,7 @@ public:
 	CPoint GetEndPoint() const;
 
 private:
-	CPoint m_firstVerix, m_secondVertix;
+	CPoint m_firstVertex, m_secondVertex;
 	std::string m_color = "000000";
 };
 

@@ -4,9 +4,9 @@
 #include <iomanip>
 #include <sstream>
 
-CLineSegment::CLineSegment(CPoint const & firstVerix, CPoint const & secondVertix, std::string color) :
-	m_firstVerix(firstVerix),
-	m_secondVertix(secondVertix),
+CLineSegment::CLineSegment(CPoint const & firstVertex, CPoint const & secondVertex, std::string color) :
+	m_firstVertex(firstVertex),
+	m_secondVertex(secondVertex),
 	m_color(color)
 {
 }
@@ -19,7 +19,7 @@ double CLineSegment::GetArea()const
 
 double CLineSegment::GetPerimeter() const
 {
-	return GetLength(m_firstVerix, m_secondVertix);
+	return GetLength(m_firstVertex, m_secondVertex);
 }
 
 std::string CLineSegment::ToString() const
@@ -38,12 +38,12 @@ std::string CLineSegment::ToString() const
 
 CPoint CLineSegment::GetStartPoint() const
 {
-	return m_firstVerix;
+	return m_firstVertex;
 }
 
 CPoint CLineSegment::GetEndPoint() const
 {
-	return m_secondVertix;
+	return m_secondVertex;
 }
 
 std::string CLineSegment::GetOutlineColor() const

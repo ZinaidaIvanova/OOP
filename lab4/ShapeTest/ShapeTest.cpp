@@ -6,6 +6,7 @@
 #include "../Shape/ISolidShape.h"
 #include "../Shape/CTriangle.h"
 #include "../Shape/CRectangle.h"
+#include "../Shape/SecondaryFunctions.h"
 
 TEST_CASE("Check Point creation and get coordinates")
 {
@@ -20,11 +21,11 @@ TEST_CASE("Check Point creation and get coordinates")
 
 TEST_CASE("Check line segment properties")
 {
-	CPoint vertix1(3, -4);
-	CPoint vertix2(-8, 6);
-	CPoint vertix3(0, 0);
-	CLineSegment line1(vertix1, vertix3, "000000");
-	CLineSegment line2(vertix3, vertix2, "FF0000");
+	CPoint vertex1(3, -4);
+	CPoint vertex2(-8, 6);
+	CPoint vertex3(0, 0);
+	CLineSegment line1(vertex1, vertex3, "000000");
+	CLineSegment line2(vertex3, vertex2, "FF0000");
 
 	SECTION("All line segments areas equal zero")
 	{
@@ -67,13 +68,13 @@ Color: 000000
 
 TEST_CASE("Check triangle properties")
 {
-	CPoint vertix1(3, -4);
-	CPoint vertix2(-8, 6);
-	CPoint vertix3(0, 0);
+	CPoint vertex1(3, -4);
+	CPoint vertex2(-8, 6);
+	CPoint vertex3(0, 0);
 	std::string outlineColor = "000000";
 	std::string color = "FF00FF";
 
-	CTriangle triangle(vertix1, vertix2, vertix3, outlineColor, color);
+	CTriangle triangle(vertex1, vertex2, vertex3, outlineColor, color);
 
 	SECTION("Triangle has perimeter")
 	{
