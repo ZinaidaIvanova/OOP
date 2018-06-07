@@ -9,6 +9,13 @@
 #include "ISolidShape.h"
 #include "CShapeCreater.h"
 
+std::shared_ptr<IShape> GetMaxAreaShape(std::vector<std::shared_ptr<IShape>> shapeList)
+{
+	
+	
+	return std::shared_ptr<IShape>();
+}
+
 
 
 int main()
@@ -18,6 +25,7 @@ int main()
 
 	while (auto shape = shapeCreater.GetShapeFromStream())
 	{
+		std::cout << "> ";
 		shapeList.push_back(shape);
 	}
 
@@ -25,7 +33,7 @@ int main()
 	{
 		for (auto elem : shapeList)
 		{
-			std::cout << elem.get()->ToString();
+			std::cout << elem.get()->ToString() << "\n";
 		}
 	}
 
