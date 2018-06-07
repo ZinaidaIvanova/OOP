@@ -8,11 +8,14 @@ class CLineSegment final:
 {
 public:
 	CLineSegment(CPoint const & firstVerix, CPoint const& secondVertix, std::string color);
+
 	double GetArea() const override;
 	double GetPerimeter() const override;
 	std::string ToString() const override;
+
 	std::string GetOutlineColor() const override;
 	void SetOutlineColor(std::string color) override;
+
 	CPoint GetStartPoint() const;
 	CPoint GetEndPoint() const;
 
