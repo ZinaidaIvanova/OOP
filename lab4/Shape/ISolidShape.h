@@ -8,6 +8,6 @@ public:
 	virtual void SetFillColor(std::string color) = 0;
 	virtual std::string GetFillColor() const = 0;
 
-	virtual ~ISolidShape();
+	~ISolidShape() = default;
 };
 
