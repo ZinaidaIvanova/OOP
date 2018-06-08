@@ -38,6 +38,10 @@ CComplex const operator -(const CComplex& right, const double& left);
 CComplex const operator *(const double& right, const CComplex& left);
 CComplex const operator /(const double& right, const CComplex& left);
 
+bool const operator ==(const double& right, const CComplex& left);
+bool const operator !=(const double& right, const CComplex& left);
+
+
 
 
 
