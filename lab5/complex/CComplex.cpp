@@ -74,7 +74,9 @@ CComplex CComplex::operator+=(const CComplex & num)
 
 CComplex CComplex::operator-=(const CComplex & num)
 {
-	return CComplex();
+	m_re -= num.Re();
+	m_im -= num.Im();
+	return *this;
 }
 
 CComplex CComplex::operator*=(const CComplex & num)
