@@ -171,6 +171,7 @@
     <ClCompile Include="..\Shape\CLineSegment.cpp" />
     <ClCompile Include="..\Shape\CPoint.cpp" />
     <ClCompile Include="..\Shape\CRectangle.cpp" />
+    <ClCompile Include="..\Shape\CShapeCreater.cpp" />
     <ClCompile Include="..\Shape\CTriangle.cpp" />
     <ClCompile Include="..\Shape\IShape.cpp" />
     <ClCompile Include="..\Shape\ISolidShape.cpp" />
@@ -181,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ShapeCreaterTests.cpp" />
     <ClCompile Include="ShapeTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

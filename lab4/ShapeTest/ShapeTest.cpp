@@ -182,7 +182,7 @@ TEST_CASE("Check circle properties")
 	SECTION("Circle has perimeter")
 	{
 		double lenght = 100 * M_PI;
-		CHECK(circle.GetPerimeter() == 314.1592);
+		CHECK(circle.GetPerimeter() == lenght);
 	}
 
 	SECTION("Circle has area")
