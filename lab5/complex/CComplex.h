@@ -9,6 +9,7 @@ public:
 
 	double GetMagnitude() const;
 	double GetArgument() const;
+	CComplex GetComplexConjugate() const;
 
 	CComplex const operator +() const;
 	CComplex const operator +(const CComplex& left) const;
@@ -17,7 +18,7 @@ public:
 	CComplex const operator -(const CComplex& left) const;
 
 	CComplex const operator *(const CComplex& left) const;
-	CComplex const operator /(const CComplex) const;
+	CComplex const operator /(const CComplex& left) const;
 
 
 
@@ -28,8 +29,8 @@ private:
 
 CComplex const operator +(const CComplex& right, const double& left);
 CComplex const operator -(const CComplex& right, const double& left);
-CComplex const operator *(const float& right, const CComplex& left);
-CComplex const operator /(const float& right, const CComplex& left);
+CComplex const operator *(const double& right, const CComplex& left);
+CComplex const operator /(const double& right, const CComplex& left);
 
 
 

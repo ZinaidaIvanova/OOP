@@ -29,6 +29,11 @@ double CComplex::GetArgument() const
 	return fmod(atan2(m_im, m_re) + 2 * M_PI, 2 * M_PI);
 }
 
+CComplex CComplex::GetComplexConjugate() const
+{
+	return CComplex(m_re, -m_im);
+}
+
 CComplex const CComplex::operator+() const
 {
 	return *this;
@@ -54,10 +59,10 @@ CComplex const CComplex::operator*(const CComplex & left) const
 	return CComplex(m_re*left.Re() - m_im * left.Im(), m_re*left.Im() + m_im * left.Re());
 }
 
-CComplex const CComplex::operator/(const CComplex) const
+CComplex const CComplex::operator/(const CComplex& left) const
 {
-	return CComplex();
-}
+	return (1.0 / (left.GetMagnitude() * left.GetMagnitude())) * CComplex(m_re, m_im) * left.GetComplexConjugate();
+} 
 
 CComplex const operator+(const CComplex & right, const double & left)
 {
@@ -69,12 +74,12 @@ CComplex const operator-(const CComplex & right, const double & left)
 	return CComplex(right.Re() - left, right.Im());
 }
 
-CComplex const operator*(const float & right, const CComplex & left)
+CComplex const operator*(const double& right, const CComplex & left)
 {
 	return CComplex(right* left.Re(), right * left.Im());
 }
 
-CComplex const operator/(const float & right, const CComplex & left)
+CComplex const operator/(const double& right, const CComplex & left)
 {
-	return CComplex();
+	return (1 / (left.GetMagnitude() * left.GetMagnitude())) * right * left.GetComplexConjugate();
 }
