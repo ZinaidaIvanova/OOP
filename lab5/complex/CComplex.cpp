@@ -51,7 +51,7 @@ CComplex const CComplex::operator-(const CComplex & left) const
 
 CComplex const CComplex::operator*(const CComplex & left) const
 {
-	return CComplex();
+	return CComplex(m_re*left.Re() - m_im * left.Im(), m_re*left.Im() + m_im * left.Re());
 }
 
 CComplex const CComplex::operator/(const CComplex) const
@@ -71,7 +71,7 @@ CComplex const operator-(const CComplex & right, const double & left)
 
 CComplex const operator*(const float & right, const CComplex & left)
 {
-	return CComplex();
+	return CComplex(right* left.Re(), right * left.Im());
 }
 
 CComplex const operator/(const float & right, const CComplex & left)
