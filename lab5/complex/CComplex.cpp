@@ -31,12 +31,12 @@ double CComplex::GetArgument() const
 
 CComplex const CComplex::operator+() const
 {
-	return CComplex(0, 0);
+	return *this;
 }
 
 CComplex const CComplex::operator-() const
 {
-	return CComplex(0, 0);
+	return CComplex(-m_re, -m_im);
 }
 
 CComplex const operator+(const CComplex & right, const CComplex & left)
@@ -65,6 +65,16 @@ CComplex const operator*(const float & right, const CComplex & left)
 }
 
 CComplex const operator*(const CComplex & right, const float & left)
+{
+	return CComplex(0, 0);
+}
+
+CComplex const operator/(const CComplex & right, const CComplex & left)
+{
+	return CComplex(0, 0);
+}
+
+CComplex const operator/(const float & right, const CComplex & left)
 {
 	return CComplex(0, 0);
 }

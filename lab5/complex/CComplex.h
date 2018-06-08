@@ -13,7 +13,7 @@ public:
 	CComplex const operator +() const;
 	CComplex const operator -() const;
 	CComplex const operator *() const;
-	CComplex const operator /() const;
+	CComplex const operator /(const CComplex) const;
 
 
 
@@ -34,8 +34,10 @@ CComplex const operator *(const CComplex& right, const CComplex& left);
 CComplex const operator *(const float& right, const CComplex& left);
 CComplex const operator *(const CComplex& right, const float& left);
 
-CComplex const operator *(const CComplex& right, const CComplex& left);
-CComplex const operator *(const float& right, const CComplex& left);
+CComplex const operator /(const CComplex& right, const CComplex& left);
+CComplex const operator /(const float& right, const CComplex& left);
+
+
 
 
 
