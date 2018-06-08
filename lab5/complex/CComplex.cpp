@@ -34,47 +34,47 @@ CComplex const CComplex::operator+() const
 	return *this;
 }
 
+CComplex const CComplex::operator+(const CComplex & left) const
+{
+	return CComplex(m_re + left.Re(), m_im + left.Im());
+}
+
 CComplex const CComplex::operator-() const
 {
 	return CComplex(-m_re, -m_im);
 }
 
-CComplex const operator+(const CComplex & right, const CComplex & left)
+CComplex const CComplex::operator-(const CComplex & left) const
 {
-	return CComplex(0,0);
+	return CComplex();
 }
 
-CComplex const operator+(const float & right, const CComplex & left)
+CComplex const CComplex::operator*(const CComplex & left) const
 {
-	return CComplex(0, 0);
+	return CComplex();
 }
 
-CComplex const operator+(const CComplex & right, const float & left)
+CComplex const CComplex::operator/(const CComplex) const
 {
-	return CComplex(0, 0);
+	return CComplex();
 }
 
-CComplex const operator*(const CComplex & right, const CComplex & left)
+CComplex const operator+(const CComplex & right, const double & left)
 {
-	return CComplex(0, 0);
+	return CComplex(right.Re() + left, right.Im());
+}
+
+CComplex const operator-(const CComplex & right, const double & left)
+{
+	return CComplex();
 }
 
 CComplex const operator*(const float & right, const CComplex & left)
 {
-	return CComplex(0, 0);
-}
-
-CComplex const operator*(const CComplex & right, const float & left)
-{
-	return CComplex(0, 0);
-}
-
-CComplex const operator/(const CComplex & right, const CComplex & left)
-{
-	return CComplex(0, 0);
+	return CComplex();
 }
 
 CComplex const operator/(const float & right, const CComplex & left)
 {
-	return CComplex(0, 0);
+	return CComplex();
 }

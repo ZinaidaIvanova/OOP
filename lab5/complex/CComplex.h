@@ -11,8 +11,12 @@ public:
 	double GetArgument() const;
 
 	CComplex const operator +() const;
+	CComplex const operator +(const CComplex& left) const;
+
 	CComplex const operator -() const;
-	CComplex const operator *() const;
+	CComplex const operator -(const CComplex& left) const;
+
+	CComplex const operator *(const CComplex& left) const;
 	CComplex const operator /(const CComplex) const;
 
 
@@ -22,19 +26,9 @@ private:
 	double m_im;
 };
 
-CComplex const operator +(const CComplex& right, const CComplex& left);
-CComplex const operator +(const float& right, const CComplex& left);
-CComplex const operator +(const CComplex& right, const float& left);
-
-CComplex const operator -(const CComplex& right, const CComplex& left);
-CComplex const operator -(const float& right, const CComplex& left);
-CComplex const operator -(const CComplex& right, const float& left);
-
-CComplex const operator *(const CComplex& right, const CComplex& left);
+CComplex const operator +(const CComplex& right, const double& left);
+CComplex const operator -(const CComplex& right, const double& left);
 CComplex const operator *(const float& right, const CComplex& left);
-CComplex const operator *(const CComplex& right, const float& left);
-
-CComplex const operator /(const CComplex& right, const CComplex& left);
 CComplex const operator /(const float& right, const CComplex& left);
 
 
