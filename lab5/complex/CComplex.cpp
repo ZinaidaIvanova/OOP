@@ -97,12 +97,12 @@ CComplex CComplex::operator/=(const CComplex & num)
 
 bool CComplex::operator==(const CComplex & left) const
 {
-	return false;
+	return AreEqualRealNumbers(m_re, left.Re()) && AreEqualRealNumbers(m_im, left.Im());
 }
 
 bool CComplex::operator!=(const CComplex & left) const
 {
-	return false;
+	return !(*this == left);
 }
 
 
@@ -128,10 +128,10 @@ CComplex const operator/(const double& right, const CComplex & left)
 
 bool const operator==(const double & right, const CComplex & left)
 {
-	return false;
+	return AreEqualRealNumbers(right, left.Re()) && AreEqualRealNumbers(0.0, left.Im());
 }
 
 bool const operator!=(const double & right, const CComplex & left)
 {
-	return false;
+	return !(right == left);
 }
