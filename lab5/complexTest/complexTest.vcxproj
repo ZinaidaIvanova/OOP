@@ -167,6 +167,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\complex\AddedTool.cpp" />
     <ClCompile Include="..\complex\CComplex.cpp" />
     <ClCompile Include="complexTest.cpp" />
     <ClCompile Include="main.cpp">

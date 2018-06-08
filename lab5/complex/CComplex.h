@@ -20,7 +20,13 @@ public:
 	CComplex const operator *(const CComplex& left) const;
 	CComplex const operator /(const CComplex& left) const;
 
+	CComplex operator +=(const CComplex& num);
+	CComplex operator -=(const CComplex& num);
+	CComplex operator *=(const CComplex& num);
+	CComplex operator /=(const CComplex& num);
 
+	bool operator == (const CComplex& left) const;
+	bool operator != (const CComplex& left) const;
 
 private:
 	double m_re;

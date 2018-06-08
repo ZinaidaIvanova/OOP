@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CComplex.h"
+#include "AddedTool.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -62,7 +63,37 @@ CComplex const CComplex::operator*(const CComplex & left) const
 CComplex const CComplex::operator/(const CComplex& left) const
 {
 	return (1.0 / (left.GetMagnitude() * left.GetMagnitude())) * CComplex(m_re, m_im) * left.GetComplexConjugate();
-} 
+}
+CComplex CComplex::operator+=(const CComplex & num)
+{
+	return CComplex();
+}
+
+CComplex CComplex::operator-=(const CComplex & num)
+{
+	return CComplex();
+}
+
+CComplex CComplex::operator*=(const CComplex & num)
+{
+	return CComplex();
+}
+
+CComplex CComplex::operator/=(const CComplex & num)
+{
+	return CComplex();
+}
+
+bool CComplex::operator==(const CComplex & left) const
+{
+	return false;
+}
+
+bool CComplex::operator!=(const CComplex & left) const
+{
+	return false;
+}
+
 
 CComplex const operator+(const CComplex & right, const double & left)
 {
