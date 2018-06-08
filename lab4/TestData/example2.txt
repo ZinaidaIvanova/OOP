@@ -1,0 +1,6 @@
+line 10.0 20.5 70.0 40.0 4effa0
+line 0.0 0.0 50.0 10.0 00ffff 
+triangle 0.0 0.0 15.0 0.0 0.0 40.0 4effa0 00ffff
+triangle 0.0 0.0 30.0 0.0 0.0 60.0 57ee41 86aa7b
+rectangle 10.0 20.5 10.0 20.0 57ee41 86aa7b
+circle 15.0 20.4 1.0 00ffff 4effa0
