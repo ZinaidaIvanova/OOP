@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "AddedTool.h"
 
+constexpr double myEpsilon = 1e-12;
+
 bool AreEqualRealNumbers(const double a, const double b)
 {
-	return ((a - b) < DBL_EPSILON);
+	return (fabs(a - b) < myEpsilon);
 }

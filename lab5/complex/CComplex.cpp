@@ -64,9 +64,12 @@ CComplex const CComplex::operator/(const CComplex& left) const
 {
 	return (1.0 / (left.GetMagnitude() * left.GetMagnitude())) * CComplex(m_re, m_im) * left.GetComplexConjugate();
 }
+
 CComplex CComplex::operator+=(const CComplex & num)
 {
-	return CComplex();
+	m_re += num.Re();
+	m_im += num.Im();
+	return *this;
 }
 
 CComplex CComplex::operator-=(const CComplex & num)
