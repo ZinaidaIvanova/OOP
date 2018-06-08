@@ -81,18 +81,12 @@ CComplex CComplex::operator-=(const CComplex & num)
 
 CComplex CComplex::operator*=(const CComplex & num)
 {
-	double temp = m_re;
-	m_re = m_re * num.Re() - m_im * num.Im();
-	m_im = temp * num.Im() + m_im * num.Re();
-	return *this;
+	return *this = *this * num;
 }
 
 CComplex CComplex::operator/=(const CComplex & num)
 {
-	CComplex temp = CComplex(m_re, m_im) / num;
-	m_re = temp.Re();
-	m_im = temp.Im();
-	return *this;
+	return *this = *this / num;
 }
 
 bool CComplex::operator==(const CComplex & left) const
