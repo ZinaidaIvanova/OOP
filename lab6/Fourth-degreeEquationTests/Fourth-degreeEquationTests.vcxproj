@@ -151,6 +151,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Fourth-degreeEquation\FerrariMethod.cpp" />
+    <ClCompile Include="..\Fourth-degreeEquation\Second-degreeEquation.cpp" />
     <ClCompile Include="Fourth-degreeEquationTests.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>

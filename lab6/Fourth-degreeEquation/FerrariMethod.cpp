@@ -2,7 +2,6 @@
 #include "FerrariMethod.h"
 #include "CardanoMethod.h"
 #include "Second-degreeEquation.h"
-#include "AddedTool.h"
 
 
 	std::vector<double> GetCoef(std::iostream& input)
@@ -27,11 +26,11 @@
 
 EquationRoot4 Solve4(std::vector<double> coef)
 {
-	if (AreEqualRealNumbers(*coef.begin(), 0))
+	if (fabs(*coef.begin()) < DBL_EPSILON)
 	{
 		throw std::invalid_argument("First coefficient can't be 0\n");//Проверить перевод
 	}
-	for (auto a : coef)
+	for (auto &a : coef)
 	{
 		a /= (*coef.begin());
 	}
