@@ -5,20 +5,6 @@
 #include <sstream>
 #include <iterator>
 
-std::vector<double> GetCoef(std::iostream& input)
-{
-	std::vector<double> coef;
-	std::string temp;
-	std::getline(input, temp);
-	std::istringstream strm(temp);
-	double num;
-	while (strm >> num)
-	{
-		coef.push_back(num);
-	}
-	return coef;
-}
-
 void AddSolution(std::vector<double>& solution2, EquationRoot4& solution4)
 {
 	if (!solution2.empty())
