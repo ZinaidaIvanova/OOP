@@ -22,7 +22,7 @@ int sgn(double a)
 std::vector<double> Solve3(double a, double b, double c, double d)
 {
 	std::vector<double> result;
-	if (fabs(a) < DBL_EPSILON)
+	if (fabs(a) > DBL_EPSILON)
 	{
 		a /= a;
 		b /= a;
