@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Second-degreeEquation.h" 
+#include <iostream>
 
 
 std::vector<double> Solve2(double a, double b, double c)

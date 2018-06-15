@@ -151,6 +151,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Fourth-degreeEquation\CardanoMethod.cpp" />
     <ClCompile Include="..\Fourth-degreeEquation\FerrariMethod.cpp" />
     <ClCompile Include="..\Fourth-degreeEquation\Second-degreeEquation.cpp" />
     <ClCompile Include="Fourth-degreeEquationTests.cpp">
