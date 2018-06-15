@@ -31,7 +31,7 @@ EquationRoot4 Solve4(std::vector<double> coef)
 		c /= a;
 	}
 
-	double y0 = GetOneCubicRoot(Solve3(1, -coef[2], coef[1] * coef[3] - 4 * coef[4], -pow(coef[1], 2) * coef[4] + 4 * coef[2] * coef[4] - pow(coef[3], 2)));
+	double y0 = GetOneCubicRoot(1, -coef[2], coef[1] * coef[3] - 4 * coef[4], -pow(coef[1], 2) * coef[4] + 4 * coef[2] * coef[4] - pow(coef[3], 2));
 
 	double p = sqrt(pow(coef[1], 2) / 4 - coef[2] + y0);
 	double q = sqrt(pow(y0, 2) / 4 - coef[4]);

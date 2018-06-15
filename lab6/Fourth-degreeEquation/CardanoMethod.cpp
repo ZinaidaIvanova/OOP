@@ -59,7 +59,8 @@ std::vector<double> Solve3(double a, double b, double c, double d)
 	return result;
 }
 
-double GetOneCubicRoot(std::vector<double> solution)
+double GetOneCubicRoot(double a, double b, double c, double d)
 {
+	std::vector<double> solution = Solve3(a, b, c, d);
 	return *solution.begin();
 }
