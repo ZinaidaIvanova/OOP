@@ -1,6 +1,5 @@
 #pragma once
-
+#include "Root3.h"
 
 int sgn(double a);
-std::vector<double> Solve3(double a, double b, double c, double d);
-double GetOneCubicRoot(double a, double b, double c, double d);
+CRoot3 Solve3(double a, double b, double c, double d);

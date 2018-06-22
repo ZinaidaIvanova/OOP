@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include "root2.h"
 
 
-std::vector<double> Solve2(double a, double b, double c);
+CRoot2 Solve2(double a, double b, double c);

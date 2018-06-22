@@ -1,25 +1,28 @@
 #include "stdafx.h"
+#include "root2.h"
+#include "Root3.h"
+#include "root4.h"
 #include "CardanoMethod.h"
 #include "FerrariMethod.h"
 #include "Second-degreeEquation.h"
 #include <sstream>
-#include <iterator>
+#include <iostream>
 
-void AddSolution(std::vector<double>& solution2, EquationRoot4& solution4)
+void AddNextRoots(CRoot2& solution2, CRoot4& solution4)
 {
-	if (!solution2.empty())
+	std::vector<double> vec = solution2.GetRoot2();
+	for (double elem : vec)
 	{
-		for (double el : solution2)
+		if (!solution4.SetNextRoot(elem))
 		{
-			solution4.roots.push_back(el);
-			solution4.numRoot++;
+			std::cout << "Fourth-degree equation can have only 4 roots";
 		}
 	}
 }
 
-EquationRoot4 Solve4(std::vector<double> coef)
+CRoot4 Solve4(std::vector<double>& coef)
 {
-	EquationRoot4 solution;
+	CRoot4 solution;
 	if (fabs(*coef.begin()) < DBL_EPSILON)
 	{
 		throw std::invalid_argument("First coefficient can't be 0\n");
@@ -31,7 +34,8 @@ EquationRoot4 Solve4(std::vector<double> coef)
 		c /= a;
 	}
 
-	double y0 = GetOneCubicRoot(1, -coef[2], coef[1] * coef[3] - 4 * coef[4], -pow(coef[1], 2) * coef[4] + 4 * coef[2] * coef[4] - pow(coef[3], 2));
+	CRoot3 cubicRoot = Solve3(1, (-coef[2]), (coef[1] * coef[3] - 4 * coef[4]), (-pow(coef[1], 2) * coef[4] + 4 * coef[2] * coef[4] - pow(coef[3], 2)));
+	double y0 = cubicRoot.GetOneRoot3();
 
 	double p = sqrt(pow(coef[1], 2) / 4 - coef[2] + y0);
 	double q = sqrt(pow(y0, 2) / 4 - coef[4]);
@@ -39,27 +43,15 @@ EquationRoot4 Solve4(std::vector<double> coef)
 	if ((coef[1] / 2 * y0 - coef[3]) < 0)
 		q = -q;
 
-	std::vector<double> solution1 = Solve2(1, coef[1] / 2 + p, y0 / 2 + q);
-	std::vector<double> solution2 = Solve2(1, coef[1] / 2 - p, y0 / 2 - q);
+	CRoot2 solution1 = Solve2(1, coef[1] / 2 + p, y0 / 2 + q);
+	CRoot2 solution2 = Solve2(1, coef[1] / 2 - p, y0 / 2 - q);
 
-	AddSolution(solution1, solution);
-	AddSolution(solution2, solution);
+	AddNextRoots(solution1, solution);
+	AddNextRoots(solution2, solution);
 
-	if (solution.numRoot == 0)
+	if (solution.GetRootsNum() == 0)
 	{
 		throw std::domain_error("The equation has no real solutions");
 	}
 	return solution;
-}
-
-void PrintSolution(EquationRoot4 solution)
-{
-	std::cout << "Equation has " << solution.numRoot << "roots\n";
-	if (!solution.roots.empty())
-	{
-		for (double root : solution.roots)
-		{
-			std::cout << root << "\n";
-		}
-	}
 }

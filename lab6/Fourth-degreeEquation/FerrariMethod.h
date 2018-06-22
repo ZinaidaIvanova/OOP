@@ -1,15 +1,7 @@
 #pragma once
-#include <vector>
-#include <iostream>
+#include "root2.h"
+#include "root4.h"
 
-struct EquationRoot4
-{
-	int numRoot = 0;
-	std::vector<double> roots;
-};
+void AddNextRoots(CRoot2& solution2, CRoot4& solution4);
 
-void AddSolution(std::vector<double>& solution2, EquationRoot4& solution4);
-
-EquationRoot4 Solve4(std::vector<double> coef);
-
-void PrintSolution(EquationRoot4 solution);
+CRoot4 Solve4(std::vector<double>& coef);
