@@ -32,7 +32,7 @@ TEST_CASE("Get the most growth athlete whith template")
 	CHECK(FindMax(AthleteList, maxGrowth, LessGrowth));
 	CHECK(maxGrowth.name == "Roman");
 	CHECK(maxGrowth.growth == 181);
-	CHECK(maxGrowth.weight == 80.0);
+	CHECK(maxGrowth.weight == 80.0f);
 }
 
 TEST_CASE("Get the most weight athlete whith template")
@@ -41,7 +41,7 @@ TEST_CASE("Get the most weight athlete whith template")
 	CHECK(FindMax(AthleteList, maxWeight, LessWeight));
 	CHECK(maxWeight.name == "Nicholay");
 	CHECK(maxWeight.growth == 175);
-	CHECK(maxWeight.weight == 86.1);
+	CHECK(maxWeight.weight == 86.1f);
 }
 
 TEST_CASE("A variable doesn't change and function return false if array is empty")
