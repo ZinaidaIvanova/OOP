@@ -48,18 +48,7 @@ std::vector<double> CRoot4::GetRoot4() const
 	return result;
 }
 
-void CRoot4::PrintRoot() const
-{
-	std::cout << "Equation has " << m_rootNum << " roots\n";
-	if (m_rootNum != 0)
-	{
-		std::vector<double> result = GetRoot4();
-		std::copy(result.begin(), result.end(), std::ostream_iterator<double>(std::cout, " "));
-		std::cout << std::endl;
-	}
-}
-
-double CRoot4::GetRootsNum() const
+int CRoot4::GetRootsNum() const
 {
 	return m_rootNum;
 }

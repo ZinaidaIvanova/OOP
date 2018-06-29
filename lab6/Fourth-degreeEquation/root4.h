@@ -9,8 +9,8 @@ public:
 	bool SetNextRoot(double root);
 
 	std::vector<double> GetRoot4() const;
-	double GetRootsNum() const;
-	void PrintRoot() const;
+	int GetRootsNum() const;
+	//void PrintRoot() const;
 
 private:
 	double m_root1 = 0;

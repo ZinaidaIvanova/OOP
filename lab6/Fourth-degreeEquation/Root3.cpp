@@ -31,8 +31,7 @@ void CRoot3::SetRoot3(double root1, double root2, double root3)
 double CRoot3::GetOneRoot3() const
 {
 	std::vector<double> result = GetRoot3();
-	std::sort(result.begin(), result.end(), std::greater<double>());
-	return *result.begin();
+	return *std::max_element(result.begin(), result.end());
 }
 
 std::vector<double> CRoot3::GetRoot3() const

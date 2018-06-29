@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CardanoMethod.h" />
+    <ClInclude Include="CRoot.h" />
     <ClInclude Include="FerrariMethod.h" />
     <ClInclude Include="root2.h" />
     <ClInclude Include="Root3.h" />

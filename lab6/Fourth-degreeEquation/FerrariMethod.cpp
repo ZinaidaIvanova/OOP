@@ -55,3 +55,14 @@ CRoot4 Solve4(std::vector<double>& coef)
 	}
 	return solution;
 }
+
+void PrintRoot(CRoot4 root)
+{
+	std::cout << "Equation has " << root.GetRootsNum() << " roots\n";
+	if (root.GetRootsNum() != 0)
+	{
+		std::vector<double> result = root.GetRoot4();
+		std::copy(result.begin(), result.end(), std::ostream_iterator<double>(std::cout, " "));
+		std::cout << std::endl;
+	}
+}
