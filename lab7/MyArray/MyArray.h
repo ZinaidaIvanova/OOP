@@ -1,10 +1,10 @@
 #pragma once
 
-
-#include <new>
 #include <algorithm>
-#include <stdexcept>
 #include <cassert>
+#include <new>
+#include <stdexcept>
+#include <iostream>
 
 template <typename T>
 class CMyArray
@@ -32,15 +32,14 @@ public:
 	}
 
 	CMyArray(CMyArray&& arr)
-		: m_begin(arr.m_begin),
-		 m_end(arr.m_end),
-		 m_endOfCapacity(arr.m_endOfCapacity)
+		: m_begin(arr.m_begin)
+		, m_end(arr.m_end)
+		, m_endOfCapacity(arr.m_endOfCapacity)
 	{
 		arr.m_begin = nullptr;
 		arr.m_end = nullptr;
 		arr.m_endOfCapacity = nullptr;
 	}
-
 
 	void Append(const T& value)
 	{
@@ -63,7 +62,6 @@ public:
 			}
 			DeleteItems(m_begin, m_end);
 
-
 			m_begin = newBegin;
 			m_end = newEnd;
 			m_endOfCapacity = m_begin + newCapacity;
@@ -81,7 +79,7 @@ public:
 		{
 			throw std::out_of_range("Index is out of range");
 		}
-		
+
 		return m_begin[index];
 	}
 
@@ -94,8 +92,8 @@ public:
 
 		return m_begin[index];
 	}
-	 
-	void Resize(size_t newSize)
+
+/*	void Resize(size_t newSize)
 	{
 		if (newSize > GetSize())
 		{
@@ -125,34 +123,38 @@ public:
 				++newEnd;
 			}
 		}
-		T* newEnd = m_begin + newSize;
-		DeleteItems(newEnd, m_end);
-		m_end = newEnd;
+		else
+		{
+			T* newEnd = m_begin + newSize - 1;
+			T* delBegin = m_begin + newSize;
+			DeleteItems(delBegin, m_end);
+			m_end = newEnd;
+		}
 	}
+	*/
+
 
 	void Clear()
 	{
-		DeleteItems(m_begin, m_end);
-		m_begin = nullptr;
-		m_begin = m_begin;
-		m_endOfCapacity = m_begin;
+		DestroyItems(m_begin, m_end);
+		m_end = m_begin;
 	}
 
 	//присваивание
-	CMyArray& operator=(CMyArray& other)
+	CMyArray& operator = (CMyArray const& other)
 	{
 		if (std::addressof(other) != this)
 		{
 			CMyArray arrCopy(other);
 			std::swap(m_begin, arrCopy.m_begin);
 			std::swap(m_end, arrCopy.m_end);
-			std::swap(m_endOfCapacity, arrCopy.m_endOfCapacity);
+			m_endOfCapacity = m_begin + other.GetCapacity();
 		}
 		return *this;
 	}
 
 	//перемещающий оператор присваивания
-	CMyArray& operator=(CMyArray&& other)
+	CMyArray& operator = (CMyArray&& other)
 	{
 		if (&other != this)
 		{
@@ -167,7 +169,6 @@ public:
 		}
 		return *this;
 	}
-
 
 	T& GetBack()
 	{
