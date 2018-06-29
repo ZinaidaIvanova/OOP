@@ -8,12 +8,12 @@ struct athlete
 	float weight = 0.0;
 };
 
-bool LessGrowth(athlete first, athlete second)
+bool LessGrowth(const athlete& first, const athlete& second)
 {
 	return (first.growth < second.growth);
 }
 
-bool LessWeight(athlete first, athlete second)
+bool LessWeight(const athlete& first, const athlete& second)
 {
 	return (first.weight < second.weight);
 }
