@@ -10,7 +10,6 @@ public:
 
 	std::vector<double> GetRoot4() const;
 	int GetRootsNum() const;
-	//void PrintRoot() const;
 
 private:
 	double m_root1 = 0;
