@@ -1,6 +1,6 @@
 #pragma once
 
-template <typename T, typename Less>
+template <typename T, typename Less = std::less<T>>
 bool FindMax(std::vector<T> const& arr, T& maxValue, Less const& less = Less())
 {
 	if (arr.empty())
@@ -8,16 +8,16 @@ bool FindMax(std::vector<T> const& arr, T& maxValue, Less const& less = Less())
 		return false;
 	}
 
-	T maxElem = *arr.begin();
-	for (T elem : arr)
+	const T *maxElem = &arr[0];
+	for (auto &elem : arr)
 	{
-		if (less(maxElem, elem))
+		if (less(*maxElem, elem))
 		{
-			maxElem = elem;
+			maxElem = &elem;
 		}
 	}
 
-	maxValue = maxElem;
+	maxValue = *maxElem;
 
 	return true;
 }
